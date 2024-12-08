@@ -25,5 +25,4 @@ This project contains automated tests for the [TodoMVC](https://todomvc.com/exam
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/lendbuzz-todomvc-tests.git
-   cd lendbuzz-todomvc-tests
+   git clone https://github.com/Igorfain/LendbuzzHomeAssigmentAutomation.git
