@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "Node",
+    "outDir": "./dist"
+  },
+  "include": [ "**/*.ts" ],
+  "exclude": [ "node_modules", "dist" ]
+}
