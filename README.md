@@ -15,7 +15,7 @@ This project contains automated tests for the [TodoMVC](https://todomvc.com/exam
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v16 or later)
-- [Download Git](https://git-scm.com/downloads))
+- [Download Git](https://git-scm.com/downloads)
 - Install playwright and browsers to the project directory :
 - npm install --save-dev @playwright/test
 - npx playwright install
