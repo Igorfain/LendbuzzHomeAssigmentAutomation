@@ -18,6 +18,9 @@ This project contains automated tests for the [TodoMVC](https://todomvc.com/exam
 
 - [Node.js](https://nodejs.org/) (v16 or later)
 - [Git](https://github.com/)
+- Install playwright and browsers to the project directory :
+- npm install --save-dev @playwright/test
+- npx playwright install
 
 ---
 
@@ -26,3 +29,7 @@ This project contains automated tests for the [TodoMVC](https://todomvc.com/exam
 1. Clone the repository:
    ```bash
    git clone https://github.com/Igorfain/LendbuzzHomeAssigmentAutomation.git
+
+2. Run tests :  npx playwright test
+
+   
