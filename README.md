@@ -5,12 +5,10 @@ This project contains automated tests for the [TodoMVC](https://todomvc.com/exam
 ---
 
 ## Features
-
-- Automated tests for TodoMVC.
-- Modular design with reusable methods in `todoActions.ts`.
-- Configurable to run on multiple browsers (Chromium, Firefox, WebKit).
-- Debugging support with Playwright Inspector.
-- Automatically uses `baseURL` from the configuration file.
+Automated tests for TodoMVC: Covers adding, completing, deleting, and filtering tasks.
+Page Object Model (POM): Methods for reusable actions are encapsulated in todoPage.ts, with higher-level workflows in todoSteps.ts.
+Browser compatibility: Configurable to run on multiple browsers (Chromium, Firefox, WebKit).
+Debugging support: Includes Playwright Inspector for step-by-step debugging.
 
 ---
 
@@ -31,5 +29,7 @@ This project contains automated tests for the [TodoMVC](https://todomvc.com/exam
    git clone https://github.com/Igorfain/LendbuzzHomeAssigmentAutomation.git
 
 2. Run tests :  npx playwright test
+3. Debug step by step : npx playwright test --debug
+
 
    
