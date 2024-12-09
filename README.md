@@ -1,4 +1,4 @@
-# TodoMVC Playwright Tests
+# TodoMVC Playwright Tests -Igor Fainshtein
 
 This project contains automated tests for the [TodoMVC](https://todomvc.com/examples/react/dist/) application using [Playwright](https://playwright.dev/) and TypeScript. It includes tests for adding, completing, deleting, and filtering tasks, with reusable actions encapsulated in a dedicated class.
 
