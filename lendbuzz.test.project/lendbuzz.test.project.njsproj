@@ -34,12 +34,14 @@
     <Content Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="actions\" />
+    <Folder Include="steps\" />
+    <Folder Include="pages\" />
     <Folder Include="tests\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="actions\todoActions.ts" />
+    <TypeScriptCompile Include="pages\todoPage.ts" />
     <TypeScriptCompile Include="playwright.config.ts" />
+    <TypeScriptCompile Include="steps\todoSteps.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

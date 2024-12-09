@@ -1,15 +1,15 @@
 import { test, expect, Page } from '@playwright/test';
-import { todoActions } from '../actions/todoActions';
+import { todoSteps } from '../steps/todoSteps';
 
 test.describe('TodoMVC Tests', function () {
     let page: Page;
-    let actions: todoActions;
+    let steps: todoSteps;
 
     test.beforeEach(async ({ browser }) => {
         const context = await browser.newContext();
         page = await context.newPage();
-        actions = new todoActions(page);
-        await actions.navigateToApp();
+        steps = new todoSteps(page); 
+        await steps.navigateToApp(); 
     });
 
     test.afterEach(async () => {
@@ -19,35 +19,34 @@ test.describe('TodoMVC Tests', function () {
     });
 
     test('Add a new task', async function () {
-        await actions.addTodoItem('Buy Milk');
+        await steps.addTodoItem('Buy Milk');
         const todoItem = page.locator('.todo-list li label');
         await expect(todoItem).toHaveText('Buy Milk');
     });
 
     test('Complete a task', async function () {
-        await actions.addTodoItem('Buy Milk');
-        await actions.completeTodoItem(0);
-        const isCompleted = await actions.isTodoItemCompleted(0);
+        await steps.addTodoItem('Buy Milk');
+        await steps.completeTodoItem(0);
+        const isCompleted = await steps.isTodoItemCompleted(0);
         expect(isCompleted).toBeTruthy();
     });
 
     test('Delete a task', async function () {
-        await actions.addTodoItem('Buy Milk');
-        await actions.deleteTodoItem(0);
-        const isHidden = await actions.isTodoItemHidden('Buy Milk');
-        expect(isHidden).toBeTruthy();
+        await steps.addTodoItem('Buy Milk'); 
+        await steps.deleteTodoItem(0); 
+        const todoList = await page.locator('.todo-list li label').allTextContents();
+        expect(todoList).not.toContain('Buy Milk');
     });
 
     test('Filter tasks by completed', async function () {
-        await actions.addTodoItem('Buy Milk');
-        await actions.addTodoItem('Buy Chanukia');
-        await actions.completeTodoItem(0);
-        await actions.filterCompletedItems();
+        await steps.addTodoItem('Buy Milk');
+        await steps.addTodoItem('Buy Chanukia');
+        await steps.completeTodoItem(0);
 
-        const isHidden = await actions.isTodoItemHidden('Buy Chanukia');
-        expect(isHidden).toBeTruthy();
+        await steps.filterCompletedItems();
 
-        const isCompleted = await actions.isTodoItemCompleted(0);
-        expect(isCompleted).toBeTruthy();
+        const visibleTasks = await page.locator('.todo-list li label').allTextContents();
+        expect(visibleTasks).toEqual(['Buy Milk']);
     });
+
 });
